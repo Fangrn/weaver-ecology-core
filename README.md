@@ -14,7 +14,7 @@ mvn install:install-file -Dfile=weaver-ecology-core.jar -DgroupId=com.github.liu
 </dependency>
 ```
 
-####方式二、复制 jar 到项目，并在dependency中指定scope="system"和本地jar包路径
+##方式二、复制 jar 到项目，并在dependency中指定scope="system"和本地jar包路径
 
 ```
 <dependency>
