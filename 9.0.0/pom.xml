@@ -102,19 +102,24 @@
                     </plugin>
                 </plugins>
             </build>
-            <distributionManagement>
-                <snapshotRepository>
-                    <!--- 此处的id需要和setting.xml 配置的service的id一致 -->
-                    <id>ossrh</id>
-                    <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-                </snapshotRepository>
-                <repository>
-                    <id>ossrh</id>
-                    <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-                </repository>
-            </distributionManagement>
         </profile>
-
     </profiles>
+
+
+    <distributionManagement>
+        <!--- 此处的id需要和setting.xml 配置的server的id一致 -->
+        <repository>
+            <id>ossrh</id>
+            <name>releases</name>
+            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+            <uniqueVersion>false</uniqueVersion>
+            <layout>default</layout>
+        </repository>
+        <snapshotRepository>
+            <id>ossrh</id>
+            <name>snapshots</name>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+        </snapshotRepository>
+    </distributionManagement>
 
 </project>
