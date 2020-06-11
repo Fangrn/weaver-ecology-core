@@ -12,6 +12,27 @@
     <url>https://github.com/liuzhenghui/weaver-ecology-core</url>
     <description>ecology core for Java</description>
 
+    <licenses>
+        <license>
+            <name>The Apache Software License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <name>liuzhenghui</name>
+            <email>liu.zhenghui@outlook.com</email>
+            <url>https://github.com/liuzhenghui</url>
+        </developer>
+    </developers>
+
+    <scm>
+        <url>https://github.com/liuzhenghui/weaver-ecology-core</url>
+        <connection>https://github.com/liuzhenghui/weaver-ecology-core.git</connection>
+        <developerConnection>https://github.com/liuzhenghui</developerConnection>
+    </scm>
+
     <distributionManagement>
         <snapshotRepository>
             <id>ossrh</id>
@@ -25,7 +46,6 @@
 
     <build>
         <plugins>
-
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-assembly-plugin</artifactId>
@@ -93,6 +113,20 @@
                     <releaseProfiles>release</releaseProfiles>
                     <goals>deploy</goals>
                 </configuration>
+            </plugin>
+            <!-- GPG -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-gpg-plugin</artifactId>
+                <version>1.5</version>
+                <executions>
+                    <execution>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>sign</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
