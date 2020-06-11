@@ -1,0 +1,69 @@
+package weaver.workflow.workflow.importForm;
+
+import java.io.File;
+import java.lang.reflect.Method;
+import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
+
+import weaver.general.BaseBean;
+import weaver.general.GCONST;
+import weaver.workflow.workflow.importForm.dto.FieldDTO;
+import weaver.workflow.workflow.importwf.ParentLastClassLoader;
+
+public class FieldReaderLoader extends BaseBean{
+	private static FieldReaderLoader loader = null;
+	private Method readerMethod = null;
+	private Object readerInstance = null;
+	
+	public static synchronized FieldReaderLoader getInstance(String filepath,String readerClass){
+		loader = new FieldReaderLoader();
+		loader.init(filepath,readerClass);
+		return loader;
+	}
+	
+	private void init(String filepath,String readerClass){
+		try {
+			if("".equals(readerClass) || readerClass == null){
+				readerClass = "weaver.workflow.workflow.importForm.FieldReader";//默认读取field的类
+			}
+			String libpath = GCONST.getRootPath() +  File.separator + "lib_wfimport" + File.separator;
+			System.out.println(libpath);
+			File file = new File(libpath);
+			File[] files = file.listFiles();
+			String [] jars = new String[files.length];
+			for(int i = 0;i<files.length;i++){
+				jars[i] = files[i].getAbsolutePath();
+			}
+			ClassLoader classLoader = new ParentLastClassLoader(Thread.currentThread().getContextClassLoader(), jars);
+			Class<?> wfreader = classLoader.loadClass(readerClass);
+			
+			Class<?>[] paramTypes = new Class[] {String.class};  
+			Object[] params = new Object[] {filepath};  
+			readerInstance = wfreader.getConstructor(paramTypes).newInstance(params);
+			    
+			this.readerMethod = wfreader.getMethod("readField", new Class[]{});
+		} catch (Exception e) {
+			writeLog("weaver.workflow.request.RequestXlsLoader 加载jar异常");
+			e.printStackTrace();
+		}
+	}
+	
+	/**
+	 * 导入流程
+	 * @param wfid
+	 * @return
+	 */
+	public List<FieldDTO> fieldReader(){
+		List<FieldDTO> result = null;
+		try {
+			result = (List<FieldDTO>)readerMethod.invoke(readerInstance, new Object[]{});
+		} catch (Exception e) {
+			writeLog("导入失败");
+			e.printStackTrace();
+		}
+		
+		return result;
+	}
+	
+}
