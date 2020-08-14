@@ -65,7 +65,6 @@
 			<parameter-type>java.lang.Object</parameter-type>
 			<parameter-type>java.lang.Object</parameter-type>
 		</function>
-		
 		<function name="INLOCATION" method="inLocation">
 			<parameter-type>java.lang.Object</parameter-type>
 			<parameter-type>java.lang.Object</parameter-type>
@@ -83,6 +82,20 @@
 			<parameter-type>java.lang.Object</parameter-type>
 			<parameter-type>java.lang.Object</parameter-type>
 			<parameter-type>java.lang.Object</parameter-type>
+		</function>
+		<function name="NOTSTARTSWITH" method="notStartsWith">
+			<parameter-type>java.lang.String</parameter-type>
+			<parameter-type>java.lang.String</parameter-type>
+		</function>
+		<function name="NOTENDSWITH" method="notEndsWith">
+			<parameter-type>java.lang.String</parameter-type>
+			<parameter-type>java.lang.String</parameter-type>
+		</function>
+		<function name="ISEMPTY" method="isEmpty">
+			<parameter-type>java.lang.String</parameter-type>
+		</function>
+		<function name="ISNOTEMPTY" method="isNotEmpty">
+			<parameter-type>java.lang.String</parameter-type>
 		</function>
 	</bean>
 <!-- 
