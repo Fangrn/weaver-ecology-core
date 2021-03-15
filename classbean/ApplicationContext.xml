@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<!-- 
+/**
+ * @author wangcd
+ * @date 2014-11-19
+ */
+ -->
+<beans default-autowire="byName">
+	<bean id="applicationContextHolder"
+		 class="weaver.common.web.ApplicationContextHolder" singleton="true">
+	</bean>
+
+	<bean id="localeResolver" class="org.springframework.web.servlet.i18n.SessionLocaleResolver" />
+
+</beans>
+

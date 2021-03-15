@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<!-- 
+/**
+ * HrmPaidLeaveTask
+ * <p>Generated from 长东设计1.0.6 http://www.mfstyle.cn</p> 
+ * 
+ * @author wcd
+ * @version 1.0 2016-02-29
+ */
+ -->
+<beans default-autowire="byName">
+	<bean id="HrmPaidLeaveTask" class="weaver.hrm.attendance.task.HrmPaidLeaveTask">
+		<property name="id" value="hrmPaidLeaveTask" />
+		<property name="name" value="hrmPaidLeaveTask" />
+		<property name="pluginInitializtion" value="weaver.hrm.attendance.task.HrmPaidLeaveSystemInit" />
+	</bean>
+</beans>
