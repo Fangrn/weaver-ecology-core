@@ -8,7 +8,7 @@
         </foreach>
         values
         <foreach collection="sets" index="index" item="set" open="( " separator="," close=")">
-            ${set.value}
+            #{set.value}
         </foreach>
     </insert>
     <delete id="clear">
@@ -30,7 +30,7 @@
                                 between #{bean.value} and #{bean.value1}
                             </when>
                             <when test="bean.operation == 'exists' or bean.operation == 'in'">
-                                ${bean.operation} ${bean.value}
+                                ${bean.operation} #{bean.value}
                             </when>
                             <otherwise>
                                 ${bean.operation} #{bean.value}

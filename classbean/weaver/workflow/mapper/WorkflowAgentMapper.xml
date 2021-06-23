@@ -8,8 +8,8 @@
 			and ifnull(isSet,'0')!='1'
 			and ispendthing='1'
 			and (beginDate is not null and beginDate!='')
-			and (unix_timestamp(beginDate+' '+begintime)<=unix_timestamp('${_parameter}'))
-			and (endDate is null or endDate='' or (unix_timestamp(endDate+' '+endtime)>unix_timestamp('${_parameter}')))
+			and (unix_timestamp(beginDate+' '+begintime)<=unix_timestamp('#{_parameter}'))
+			and (endDate is null or endDate='' or (unix_timestamp(endDate+' '+endtime)>unix_timestamp('#{_parameter}')))
 		]]>
 	</select>
 	<select id="selectUsingAgent" resultType="string" databaseId="oracle">
@@ -19,8 +19,8 @@
 			and nvl(isSet,'0')!='1'
 			and ispendthing='1'
 			and (beginDate is not null )
-			and (beginDate||' '||begintime<='${_parameter}')
-			and (endDate is null or endDate='' or (endDate||' '||endtime>'${_parameter}'))
+			and (beginDate||' '||begintime<='#{_parameter}')
+			and (endDate is null or endDate='' or (endDate||' '||endtime>'#{_parameter}'))
 		]]>
 	</select>
 	<select id="selectUsingAgent" resultType="string">
@@ -30,8 +30,8 @@
 			and isnull(isSet,'0')!='1'
 			and ispendthing='1'
 			and (beginDate is not null and beginDate!='')
-			and (beginDate+' '+begintime<='${_parameter}')
-			and (endDate is null or endDate='' or (endDate+' '+endtime>'${_parameter}'))
+			and (beginDate+' '+begintime<='#{_parameter}')
+			and (endDate is null or endDate='' or (endDate+' '+endtime>'#{_parameter}'))
 		]]>
 	</select>
 </mapper>
