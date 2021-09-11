@@ -88,10 +88,10 @@
         <implementationClass>weaver.WorkPlan.webservices.WorkplanServiceImpl</implementationClass> 
     </service>
     <service> 
-        <name>MeetingService</name>  
-        <namespace>webservices.meeting.weaver.com.cn</namespace>  
-        <serviceClass>weaver.meeting.webservices.MeetingService</serviceClass>  
-        <implementationClass>weaver.meeting.webservices.MeetingServiceImpl</implementationClass> 
+        <name>HrmServiceTest</name>  
+        <namespace>webservices.hrmservicetest.weaver.com.cn</namespace>  
+        <serviceClass>weaver.hrm.webservice.HrmServiceTest</serviceClass>  
+        <implementationClass>weaver.hrm.webservice.HrmServiceTest</implementationClass> 
     </service>
     <service> 
         <name>CrmService</name>  
@@ -101,9 +101,9 @@
         <serviceFactory>org.codehaus.xfire.annotations.AnnotationServiceFactory</serviceFactory> 
     </service>
     <service> 
-        <name>HrmServiceTest</name>  
-        <namespace>webservices.hrmservicetest.weaver.com.cn</namespace>  
-        <serviceClass>weaver.hrm.webservice.HrmServiceTest</serviceClass>  
-        <implementationClass>weaver.hrm.webservice.HrmServiceTest</implementationClass> 
+        <name>MeetingService</name>  
+        <namespace>webservices.meeting.weaver.com.cn</namespace>  
+        <serviceClass>weaver.meeting.webservices.MeetingService</serviceClass>  
+        <implementationClass>weaver.meeting.webservices.MeetingServiceImpl</implementationClass> 
     </service>
 </beans>
