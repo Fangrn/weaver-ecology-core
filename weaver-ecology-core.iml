@@ -9,14 +9,5 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module-library">
-      <library name="Maven: com.weaver:WeaverBoot-E9:0.1.1">
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/lib/WeaverBoot-E9.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
   </component>
 </module>

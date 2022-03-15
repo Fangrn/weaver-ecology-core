@@ -6,7 +6,7 @@
 
     <groupId>com.github.liuzhenghui</groupId>
     <artifactId>weaver-ecology-core</artifactId>
-    <version>9.00.2110.07.220315</version>
+    <version>9.00.2110.07.220316</version>
 
     <name>weaver-ecology-core</name>
     <url>https://github.com/liuzhenghui/weaver-ecology-core</url>
@@ -43,16 +43,6 @@
             <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
         </repository>
     </distributionManagement>
-
-    <dependencies>
-        <dependency>
-            <groupId>com.weaver</groupId>
-            <artifactId>WeaverBoot-E9</artifactId>
-            <version>0.1.1</version>
-            <scope>system</scope>
-            <systemPath>${project.basedir}/lib/WeaverBoot-E9.jar</systemPath>
-        </dependency>
-    </dependencies>
 
     <build>
         <plugins>
